@@ -1,0 +1,53 @@
+#load {
+    -fx-background-color: linear-gradient(from 0% 93% to 0% 100%, white 0%, deepskyblue 100%),
+    white,
+    deepskyblue,
+    radial-gradient(center 50% 50%, radius 100%, white, deepskyblue);
+}
+
+#analyze {
+    -fx-background-color: linear-gradient(from 0% 93% to 0% 100%, white 0%, orange 100%),
+    white,
+    orange,
+    radial-gradient(center 50% 50%, radius 100%, white, orange);
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+
+  .table-view .column-header {
+      -fx-background-color: transparent;
+  }
+
+  .table-view .column-header-background{
+      -fx-background-color: #7FFFD4;
+  }
+
+
+  .table-view .column-header-background .label{
+      -fx-background-color: transparent;
+      -fx-font-weight:bold;
+      -fx-text-fill: black;
+  }
+
+
+.table-row-cell{
+    -fx-background-color: white;
+    -fx-background-insets: 0.0, 0.0 0.0 1.0 0.0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: white;
+    -fx-background-insets: 0.0, 0.0 0.0 1.0 0.0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:hover {
+      -fx-background-color:skyblue;
+}
+
+#grid {
+    -fx-background-color: #7FFFD4;
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.mark.AppController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="about" mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="linesText" prefHeight="26.0" prefWidth="160.0" text="Total lines: 0">
+                    <font>
+                        <Font name="Segoe UI Light Italic" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="symbText" prefHeight="26.0" prefWidth="160.0" text="Total symbols: 0">
+                    <font>
+                        <Font name="Segoe UI Light Italic" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" prefHeight="424.0" prefWidth="346.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <TableView fx:id="operatorsTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="C1" />
+                                <TableColumn prefWidth="75.0" text="C2" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                        <TableView fx:id="condOperatorsTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="C1" />
+                                <TableColumn prefWidth="75.0" text="C2" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                        <GridPane fx:id="grid" alignment="CENTER" hgap="10.0" prefWidth="283.0" vgap="20.0" VBox.vgrow="ALWAYS">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="230.2" minWidth="150.0" prefWidth="187.99996337890624" />
+                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="203.20001220703125" minWidth="10.0" prefWidth="150.4000366210938" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                            </rowConstraints>
+                            <children>
+                                <Label id="labels" prefHeight="18.0" prefWidth="177.0" text="Absolute Complexity:" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="JetBrains Mono Medium" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label id="labels" prefHeight="16.0" prefWidth="172.0" text="Relative Complexity:" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="JetBrains Mono Medium" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label id="labels" prefHeight="18.0" prefWidth="204.0" text="Maximum Nesting Level:" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="JetBrains Mono Medium" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="absComplexity" alignment="CENTER" editable="false" promptText="Click Analyze.." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="JetBrains Mono Medium" size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="relComplexity" alignment="CENTER" editable="false" promptText="Click Analyze.." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="JetBrains Mono Medium" size="14.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="maxNestLevel" alignment="CENTER" editable="false" promptText="Click Analyze.." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="JetBrains Mono Medium" size="14.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </GridPane>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="424.0" prefWidth="348.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Button id="load" fx:id="loadFileButton" mnemonicParsing="false" text="Load File">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="JetBrains Mono Medium" size="16.0" />
+                            </font>
+                        </Button>
+                        <TextArea fx:id="codeArea" prefHeight="200.0" prefWidth="200.0" promptText="Please, Load the File.." VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="JetBrains Mono Light" size="12.0" />
+                            </font>
+                        </TextArea>
+                        <Button id="analyze" fx:id="analyzeTextButton" mnemonicParsing="false" text="Analyze Text">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="JetBrains Mono Medium" size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>
